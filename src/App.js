@@ -28,7 +28,7 @@ const App = () => {
     <div className="App">
       <CitySearch allLocations={allLocations} setCurrentCity={setCurrentCity} />
       <EventList events={events} />
-      <NumberOfEvents currentNOE = {currentNOE} setCurrentNOE={setCurrentNOE} />
+      <NumberOfEvents currentNOE={currentNOE} setCurrentNOE={setCurrentNOE} />
     </div>
   );
 }
