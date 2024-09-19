@@ -79,7 +79,7 @@ describe('<CitySearch /> integration', () => {
     const AppComponent = render(<App />);
     const AppDOM = AppComponent.container.firstChild;
 
-    const CitySearchDOM = AppDOM.querySelector('#city-search');
+    const CitySearchDOM = AppDOM.querySelector('.city-search');
     const cityTextBox = within(CitySearchDOM).queryByRole('textbox');
     await user.click(cityTextBox);
 

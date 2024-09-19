@@ -14,11 +14,11 @@ describe('<App /> component', () => {
     });
 
     test('render CitySearch', () => {
-        expect(AppDOM.querySelector('#city-search')).toBeInTheDocument();
+        expect(AppDOM.querySelector('.city-search')).toBeInTheDocument();
     });
 
     test('render number of events', () => {
-        expect(AppDOM.querySelector('#number-of-events')).toBeInTheDocument();
+        expect(AppDOM.querySelector('.number-of-events')).toBeInTheDocument();
     });
 
 });
@@ -29,7 +29,7 @@ describe('<App /> integration', () => {
         const AppComponent = render(<App />);
         const AppDOM = AppComponent.container.firstChild;
 
-        const CitySearchDOM = AppDOM.querySelector('#city-search');
+        const CitySearchDOM = AppDOM.querySelector('.city-search');
         const CitySearchInput = within(CitySearchDOM).queryByRole('textbox');
 
         await user.type(CitySearchInput, 'Berlin');

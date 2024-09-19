@@ -38,7 +38,7 @@ describe('<NumberOfEvents /> integration', () => {
         const AppComponent = render(<App />);
         const AppDOM = AppComponent.container.firstChild;
 
-        const NumberOfEventsDOM = AppDOM.querySelector('#number-of-events');
+        const NumberOfEventsDOM = AppDOM.querySelector('.number-of-events');
         const NumberOfEventsInput = within(NumberOfEventsDOM).queryByRole('textbox');
 
         await user.type(NumberOfEventsInput, '{backspace}{backspace}10');

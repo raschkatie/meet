@@ -1,38 +1,165 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto:500);
+:root {
+  --primary-color: #123C69; 
+  --secondary-color: #AC3B61;
+  --light-beige: #EEE2DC;
+  --dark-beige: #EDC7B7;
+  --main-font-size: 16px;
+  --font-bold: 700;
+}
+
 .App {
   text-align: center;
+  padding: 2% 5%;
+  background-color: var(--light-beige);
+  color: var(--primary-color);
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.App * {
+  box-sizing: border-box;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+ul {
+  padding: 0;
+  list-style: none;
+}
+
+p {
+  margin: 5px 0;
+}
+
+#heading {
+  background-color: var(--dark-beige);
+  border-radius: 5px;
+  padding-top: 10px;
+}
+
+#heading-details {
+  padding-bottom: 40px;
+  font-style: italic;
+}
+
+.input-title {
+  font-weight: var(--font-bold);
+  color: var(--secondary-color);
+}
+
+input[type="text"],
+input[type="number"] {
+  padding: 8px 6px 8px 10px;
+  border-radius: 4px;
+  outline: none;
+  border: 1px solid #ccc;
+  font-size: 14px;
+  line-height: 20px;
+  align-self: center;
+  height: 38px;
+  margin: 10px 0 5px 10px;
+  background-color: var(--light-beige);
+  color: var(--secondary-color);
+}
+
+.search-box {
+  display: inline;
+  position: relative;
+  margin: 0 40px 0 40px;
+}
+
+::placeholder {
+  color: var(--secondary-color);
+}
+
+.city {
+  width: 250px;
+}
+
+#location {
+  padding-top: 20px;
+}
+
+.city-search {
+  margin: auto;
+}
+
+.suggestions {
+  width: 250px;
+  position: absolute;
+  top: 45px;
+  z-index: 2;
+  align-self: center;
+  margin: 0;
+  font-size: 14px;
+  box-shadow: 10px 10px 16px -12px rgba(0, 0, 0, 0.75);
+  background-color: var(--dark-beige);
+}
+
+.suggestions > li {
+  text-align: left;
+  padding: 8px 6px 8px 10px;
+  cursor: default;
+}
+
+.suggestions > li:last-child {
+  border-bottom-left-radius: 4px;
+  border-bottom-right-radius: 4px;
+}
+
+.suggestions > li:hover {
+  background-color: var(--secondary-color);
+  color: var(--light-beige);
+}
+
+.event {
+  padding: 10px 10px 35px;
+  margin-bottom: 10px;
+  text-align: left;
+  border-radius: 5px;
+  position: relative;
+  background-color: var(--dark-beige);
+}
+
+.details {
+  font-style: italic;
+  padding-top: 10px;
+}
+
+.details-btn {
+  position: absolute;
+  right: 7px;
+  bottom: 7px;
+  padding: 6px 9px;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  background-color: var(--secondary-color);
+  color: var(--light-beige);
+  border-radius: 5px;
+}
+
+.details-btn:hover {
+  background-color: #8F1E49;
+}
+
+.event-detail-title {
+  font-weight: var(--font-bold);
+}
+
+@media all and (min-width: 300px) and (max-width: 750px) {
+  #heading {
+    padding-right: 20px;
+    padding-left: 20px;
   }
-}
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+  h1 {
+    padding-right: 40px;
+    padding-left: 40px;
   }
-  to {
-    transform: rotate(360deg);
+
+  .search-box {
+    margin: 20px;
+    padding: 0;
+    align-items: center;
+    display: block;
+    position:relative;
   }
 }

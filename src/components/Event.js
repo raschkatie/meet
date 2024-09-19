@@ -6,18 +6,18 @@ const Event = ({ event }) => {
     return (
         <li className='event'>
             <h3>{event.summary}</h3>
-            <p className='location'>{event.location}</p>
-            <p className='start-time'>{event.start.dateTime}</p>
-            <p className='end-time'>{event.end.dateTime}</p>
+            <span className="event-detail-title">Location: </span><p className='location'>{event.location}</p>
+            <span className="event-detail-title">Start: </span><p className='start-time'>{new Date(event.start.dateTime).toUTCString()}</p>
+            <span className="event-detail-title">End: </span><p className='end-time'>{new Date(event.end.dateTime).toUTCString()}</p>
 
             {showDetails ? (
                 <div className='details'>
                     <p>{event.description}</p>
                 </div>
-            ) : null };
+            ) : null }
 
             <button 
-                id='show-details'
+                className='details-btn'
                 onClick={() => setShowDetails(!showDetails)}>
                 {showDetails ? "hide details" : "show details"}
             </button>
