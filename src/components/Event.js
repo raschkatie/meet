@@ -5,7 +5,7 @@ const Event = ({ event }) => {
 
     return (
         <li className='event'>
-            <h3>{event.summary}</h3>
+            <h3 className="event-title">{event.summary}</h3>
             <span className="event-detail-title">Location: </span><p className='location'>{event.location}</p>
             <span className="event-detail-title">Start: </span><p className='start-time'>{new Date(event.start.dateTime).toUTCString()}</p>
             <span className="event-detail-title">End: </span><p className='end-time'>{new Date(event.end.dateTime).toUTCString()}</p>

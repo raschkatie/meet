@@ -10,16 +10,19 @@ const NumberOfEvents = ({ currentNOE, setCurrentNOE }) => {
     }
 
     return (
-        <div className='number-of-events search-box'>
+        <div className='textbox-and-title'>
             <label id='number'>
                 <span className="input-title">Number of Events: </span>
+            </label>
+            <div className='search-box'>
                 <input
                     type='text'
                     value={currentNOE}
                     onChange={handleInputChanged}
                 />
-            </label>
+            </div>
         </div>
+
     )
 };
 

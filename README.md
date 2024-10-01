@@ -52,8 +52,8 @@ _When the user hasn’t clicked on the Show/Hide button, the event description i
 
 _When the user has clicked on the Show/Hide button, they can view more specific details about an event._
 
-- Given the Show/Hide button is clicked;
-- When the user views a specific event;
+- Given the event details are hidden;
+- When the user clicks on the Show/Hide button;
 - Then they should see more details about the specific event.
 
 ### Feature 3: Specify Number of Events
@@ -72,8 +72,8 @@ _User should see the full list of events when a number of events has not been sp
 
 _When the user fills out the 'Number of Events' field, they should not view more than the specified number_
 
-- Given the "Number of Events" field has a value input given by the user;
-- When the user views the events list;
+- Given the user has opened the app;
+- When the user types a new value in the field;
 - Then they should not see a number of events in the list that exceeds the provided value.
 
 ### Feature 4: Use the App when Offline
