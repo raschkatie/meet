@@ -10,7 +10,7 @@ const NumberOfEvents = ({ currentNOE, setCurrentNOE }) => {
     }
 
     return (
-        <div className='textbox-and-title'>
+        <div className='textbox-and-title number-of-events'>
             <label id='number'>
                 <span className="input-title">Number of Events: </span>
             </label>

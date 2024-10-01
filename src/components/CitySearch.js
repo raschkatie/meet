@@ -27,7 +27,7 @@ const CitySearch = ({ allLocations, setCurrentCity }) => {
     };
 
     return (
-        <div className='textbox-and-title'>
+        <div className='textbox-and-title city-search'>
             <label id='location'>
                 <span className='input-title'>Event Location: </span>
             </label>
