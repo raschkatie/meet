@@ -36,6 +36,7 @@ h1 {
 .loading-screen {
   color: var(--tertiary-color);
   padding: 40px;
+  z-index: 2;
 }
 
 #heading {
