@@ -16,9 +16,7 @@ const App = () => {
   useEffect(() => {
     console.log('loading screen enabled');
     setIsLoading(true);
-    fetchData()
-    .then(setIsLoading(false))
-    .then(console.log('loading screen disabled'));
+    fetchData();
   }, [currentCity, currentNOE]);
 
   const fetchData = async () => {
@@ -28,6 +26,8 @@ const App = () => {
       allEvents.filter(event => event.location === currentCity);
     setEvents(filteredEvents.slice(0, currentNOE));
     setAllLocations(extractLocations(allEvents));
+    setIsLoading(false);
+    console.log('loading screen disabled');
   }
 
   return (
@@ -42,8 +42,10 @@ const App = () => {
       </div>
       <CitySearch allLocations={allLocations} setCurrentCity={setCurrentCity} />
       <NumberOfEvents currentNOE={currentNOE} setCurrentNOE={setCurrentNOE} />
-      {isLoading ? <h3 className='loading-screen'>Loading...</h3> : null}
-      {<EventList events={events} />}
+      <div>
+        {isLoading ? <h3 className='loading-screen'>Loading...</h3> : null}
+        <EventList events={events} />
+      </div>
     </div>
   );
 }
