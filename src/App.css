@@ -33,6 +33,11 @@ h1 {
   color: var(--tertiary-color);
 }
 
+.loading-screen {
+  color: var(--tertiary-color);
+  padding: 40px;
+}
+
 #heading {
   background-color: var(--darker-grey);
   border-radius: 5px;

@@ -3,6 +3,7 @@ import CitySearch from './components/CitySearch';
 import NumberOfEvents from './components/NumberOfEvents';
 import { extractLocations, getEvents } from './api';
 import { useState, useEffect } from 'react';
+import React from 'react';
 import './App.css';
 
 const App = () => {
@@ -10,9 +11,12 @@ const App = () => {
   const [currentNOE, setCurrentNOE] = useState(32);
   const [allLocations, setAllLocations] = useState([]);
   const [currentCity, setCurrentCity] = useState('See all cities');
+  const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
-    fetchData();
+    setIsLoading(true);
+    fetchData()
+    .then(setIsLoading(false));
   }, [currentCity, currentNOE]);
 
   const fetchData = async () => {
@@ -25,10 +29,13 @@ const App = () => {
   }
 
   return (
-    <div className="App">
-      <div id="heading">
+    <div className='App'>
+      <div>
+        {isLoading ? <h3 className='loading-screen'>Loading...</h3> : null}
+      </div>
+      <div id='heading'>
         <h1>Welcome to the Meet App</h1>
-        <p id="heading-details">
+        <p id='heading-details'>
           Here, you can find events all around the globe. <br />
           If you'd like to find events near you or edit the number of events displayed, use the search bars below. <br />
           Happy planning!
