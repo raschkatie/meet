@@ -14,9 +14,11 @@ const App = () => {
   const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
+    console.log('loading screen enabled')
     setIsLoading(true);
     fetchData()
-    .then(setIsLoading(false));
+    .then(setIsLoading(false))
+    .then(console.log('loading screen disabled'));
   }, [currentCity, currentNOE]);
 
   const fetchData = async () => {
@@ -41,7 +43,7 @@ const App = () => {
       <CitySearch allLocations={allLocations} setCurrentCity={setCurrentCity} />
       <NumberOfEvents currentNOE={currentNOE} setCurrentNOE={setCurrentNOE} />
       {isLoading ? <h3 className='loading-screen'>Loading...</h3> : null}
-      <EventList events={events} />
+      {<EventList events={events} />}
     </div>
   );
 }
