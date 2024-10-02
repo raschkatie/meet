@@ -30,9 +30,6 @@ const App = () => {
 
   return (
     <div className='App'>
-      <div>
-        {isLoading ? <h3 className='loading-screen'>Loading...</h3> : null}
-      </div>
       <div id='heading'>
         <h1>Welcome to the Meet App</h1>
         <p id='heading-details'>
@@ -43,6 +40,7 @@ const App = () => {
       </div>
       <CitySearch allLocations={allLocations} setCurrentCity={setCurrentCity} />
       <NumberOfEvents currentNOE={currentNOE} setCurrentNOE={setCurrentNOE} />
+      {isLoading ? <h3 className='loading-screen'>Loading...</h3> : null}
       <EventList events={events} />
     </div>
   );
