@@ -14,7 +14,7 @@ const App = () => {
   const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
-    console.log('loading screen enabled')
+    console.log('loading screen enabled');
     setIsLoading(true);
     fetchData()
     .then(setIsLoading(false))
