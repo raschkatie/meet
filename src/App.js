@@ -14,7 +14,6 @@ const App = () => {
   const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
-    console.log('loading screen enabled');
     setIsLoading(true);
     fetchData();
   }, [currentCity, currentNOE]);
@@ -27,7 +26,6 @@ const App = () => {
     setEvents(filteredEvents.slice(0, currentNOE));
     setAllLocations(extractLocations(allEvents));
     setIsLoading(false);
-    console.log('loading screen disabled');
   }
 
   return (
