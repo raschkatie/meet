@@ -9,7 +9,7 @@ describe('<NumberOfEvents /> component', () => {
     let textbox;
 
     beforeEach(() => {
-        NumberOfEventsComponent = render(<NumberOfEvents currentNOE={32} setCurrentNOE={() => {}} />);
+        NumberOfEventsComponent = render(<NumberOfEvents currentNOE={32} setCurrentNOE={() => {}} setErrorAlert={() => {}} />);
     });
 
     test('has an element with "textbox" role', () => {
@@ -26,7 +26,7 @@ describe('<NumberOfEvents /> component', () => {
         const user = userEvent.setup();
         await user.type(textbox, '{backspace}{backspace}10');
         const events = await getEvents();
-        NumberOfEventsComponent.rerender(<NumberOfEvents currentNOE={10} setCurrentNOE={events} />);
+        NumberOfEventsComponent.rerender(<NumberOfEvents currentNOE={10} setCurrentNOE={events} setErrorAlert={() => {}} />);
         expect(textbox).toHaveValue('10');
     });
 

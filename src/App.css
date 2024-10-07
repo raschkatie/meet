@@ -33,10 +33,18 @@ h1 {
   color: var(--tertiary-color);
 }
 
+.alerts-container {
+  position: fixed;
+  top: 0;
+  left: 20px;
+  width: 250px;
+  z-index: 1000;
+}
+
 .loading-screen {
   color: var(--tertiary-color);
   padding: 40px;
-  z-index: 2;
+  z-index: 10;
 }
 
 #heading {
