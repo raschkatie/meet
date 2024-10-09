@@ -38,7 +38,7 @@ const App = () => {
         {errorAlert.length ? <ErrorAlert text={errorAlert} /> : null}
       </div>
       <div id='heading'>
-        <h1>Welcome to the Meet App</h1>
+        <h1>Meet App</h1>
         <p id='heading-details'>
           Here, you can find events all around the globe. <br />
           If you'd like to find events near you or edit the number of events displayed, use the search bars below. <br />
