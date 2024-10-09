@@ -3,7 +3,7 @@ import CitySearch from './components/CitySearch';
 import NumberOfEvents from './components/NumberOfEvents';
 import { extractLocations, getEvents } from './api';
 import { useState, useEffect } from 'react';
-import { InfoAlert, ErrorAlert } from './components/Alert';
+import { InfoAlert, ErrorAlert, WarningAlert } from './components/Alert';
 import React from 'react';
 import './App.css';
 
@@ -15,8 +15,17 @@ const App = () => {
   const [isLoading, setIsLoading] = useState(false);
   const [infoAlert, setInfoAlert] = useState("");
   const [errorAlert, setErrorAlert] = useState("");
+  const [warningAlert, setWarningAlert] = useState("");
 
   useEffect(() => {
+    let warningText;
+    if (navigator.onLine) {
+      warningText = "";
+    } else {
+      warningText = "You are currently offline. Loading list from cached data. Please connect to the internet for an up-to-date list.";
+    }
+    setWarningAlert(warningText);
+    
     setIsLoading(true);
     fetchData();
   }, [currentCity, currentNOE]);
@@ -36,6 +45,7 @@ const App = () => {
       <div className='alerts-container'>
         {infoAlert.length ? <InfoAlert text={infoAlert} /> : null}
         {errorAlert.length ? <ErrorAlert text={errorAlert} /> : null}
+        {warningAlert.length ? <WarningAlert text={warningAlert} /> : null}
       </div>
       <div id='heading'>
         <h1>Meet App</h1>
