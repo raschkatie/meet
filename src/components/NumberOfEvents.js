@@ -1,4 +1,4 @@
-import { useState } from "react"
+import { useState } from 'react'
 
 
 const NumberOfEvents = ({ currentNOE, setCurrentNOE, setErrorAlert }) => {
@@ -8,9 +8,9 @@ const NumberOfEvents = ({ currentNOE, setCurrentNOE, setErrorAlert }) => {
 
         let errorText;
         if (isNaN(value) || value <= 0) {
-            errorText = "Please enter a valid number";
+            errorText = 'Please enter a valid number';
         } else {
-            errorText = "";
+            errorText = '';
         }
         setCurrentNOE(value);
         setErrorAlert(errorText);
@@ -19,7 +19,7 @@ const NumberOfEvents = ({ currentNOE, setCurrentNOE, setErrorAlert }) => {
     return (
         <div className='textbox-and-title number-of-events'>
             <label id='number'>
-                <span className="input-title">Number of Events: </span>
+                <span className='input-title'>Number of Events: </span>
             </label>
             <div className='search-box'>
                 <input

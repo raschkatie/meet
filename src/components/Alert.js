@@ -1,4 +1,4 @@
-import { Component } from "react";
+import { Component } from 'react';
 
 class Alert extends Component {
     constructor(props) {
@@ -11,21 +11,21 @@ class Alert extends Component {
         return {
             color: this.color,
             backgroundColor: this.bgColor,
-            borderWidth: "2px",
-            borderStyle: "solid",
-            fontWeight: "bolder",
-            borderRadius: "7px",
+            borderWidth: '2px',
+            borderStyle: 'solid',
+            fontWeight: 'bolder',
+            borderRadius: '7px',
             borderColor: this.color,
-            textAlign: "center",
-            fontSize: "12px",
-            margin: "10px 0",
-            padding: "10px"
+            textAlign: 'center',
+            fontSize: '12px',
+            margin: '10px 0',
+            padding: '10px'
         };
     }
 
     render() {
         return (
-            <div className="Alert">
+            <div className='Alert'>
                 <p style={this.getStyle()}>{this.props.text}</p>
             </div>
         );

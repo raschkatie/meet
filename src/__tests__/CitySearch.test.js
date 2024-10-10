@@ -1,8 +1,8 @@
-import { render, waitFor, within } from "@testing-library/react";
-import { extractLocations, getEvents } from "../api";
-import userEvent from "@testing-library/user-event";
-import CitySearch from "../components/CitySearch";
-import App from "../App";
+import { render, waitFor, within } from '@testing-library/react';
+import { extractLocations, getEvents } from '../api';
+import userEvent from '@testing-library/user-event';
+import CitySearch from '../components/CitySearch';
+import App from '../App';
 
 describe('<CitySearch /> component', () => {
     let CitySearchComponent;
@@ -36,11 +36,11 @@ describe('<CitySearch /> component', () => {
         const allLocations = extractLocations(allEvents);
         CitySearchComponent.rerender(<CitySearch allLocations={allLocations} setCurrentCity={() => { }} setInfoAlert={() => { }} />);
     
-        // user types "Berlin" in city textbox
+        // user types 'Berlin' in city textbox
         const cityTextBox = CitySearchComponent.queryByRole('textbox');
-        await user.type(cityTextBox, "Berlin");
+        await user.type(cityTextBox, 'Berlin');
     
-        // filter allLocations to locations matching "Berlin"
+        // filter allLocations to locations matching 'Berlin'
         const suggestions = allLocations? allLocations.filter((location) => {
           return location.toUpperCase().indexOf(cityTextBox.value.toUpperCase()) > -1;
         }): [];
@@ -64,7 +64,7 @@ describe('<CitySearch /> component', () => {
         />);
 
         const cityTextBox = CitySearchComponent.queryByRole('textbox');
-        await user.type(cityTextBox, "Berlin");
+        await user.type(cityTextBox, 'Berlin');
 
         const BerlinGermanySuggestion = CitySearchComponent.queryAllByRole('listitem')[0];
 

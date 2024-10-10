@@ -1,7 +1,7 @@
-import { render } from "@testing-library/react";
-import Event from "../components/Event";
-import userEvent from "@testing-library/user-event";
-import { getEvents } from "../api";
+import { render } from '@testing-library/react';
+import Event from '../components/Event';
+import userEvent from '@testing-library/user-event';
+import { getEvents } from '../api';
 
 
 describe('<Event /> component', () => {

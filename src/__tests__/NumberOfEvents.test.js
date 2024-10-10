@@ -1,8 +1,8 @@
-import { render, within } from "@testing-library/react";
-import NumberOfEvents from "../components/NumberOfEvents";
-import userEvent from "@testing-library/user-event";
-import { getEvents } from "../api";
-import App from "../App";
+import { render, within } from '@testing-library/react';
+import NumberOfEvents from '../components/NumberOfEvents';
+import userEvent from '@testing-library/user-event';
+import { getEvents } from '../api';
+import App from '../App';
 
 describe('<NumberOfEvents /> component', () => {
     let NumberOfEventsComponent;
@@ -12,7 +12,7 @@ describe('<NumberOfEvents /> component', () => {
         NumberOfEventsComponent = render(<NumberOfEvents currentNOE={32} setCurrentNOE={() => {}} setErrorAlert={() => {}} />);
     });
 
-    test('has an element with "textbox" role', () => {
+    test('has an element with \'textbox\' role', () => {
         expect(NumberOfEventsComponent.queryByRole('textbox')).toBeInTheDocument();
     });
 
