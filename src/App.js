@@ -6,6 +6,7 @@ import { useState, useEffect } from 'react';
 import { InfoAlert, ErrorAlert, WarningAlert } from './components/Alert';
 import React from 'react';
 import './App.css';
+import CityEventsChart from './components/CityEventsChart';
 
 const App = () => {
   const [events, setEvents] = useState([]);
@@ -67,6 +68,7 @@ const App = () => {
       />
       <div>
         {isLoading ? <h3 className='loading-screen'>Loading...</h3> : null}
+        <CityEventsChart allLocations={allLocations} events={events} />
         <EventList events={events} />
       </div>
     </div>
