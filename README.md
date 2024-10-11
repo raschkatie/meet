@@ -6,6 +6,15 @@ This app will be a serverless progressive web application (PWA) with React using
 
 You can access the running app at: [https://raschkatie.github.io/meet/](https://raschkatie.github.io/meet/).
 
+## Tech Used
+
+- Serverless
+- Google Calendar API
+- React
+- Jest
+- Puppeteer
+- Recharts
+
 ## Key Features
 
 ### Feature 1: Filter Events by City
