@@ -25,28 +25,31 @@ const CityEventsChart = ({ allLocations, events }) => {
     };
 
     return (
-        <ResponsiveContainer width='99%' height={400}>
-            <ScatterChart
-                margin={{
-                top: 20,
-                right: 20,
-                bottom: 60,
-                left: -30,
-                }}
-            >
-                <CartesianGrid />
-                <XAxis 
-                    type='category' dataKey='city' name='City'
-                    angle={60} interval={0} tick={{ dx: 20, dy: 40, fontSize: 14 }}
-                />
-                <YAxis
-                    type='number' dataKey='count'
-                    name='Number of Events' allowDecimals={false}
-                />
-                <Tooltip cursor={{ strokeDasharray: '3 3' }} />
-                <Scatter name='Events' data={data} fill='#40748c' />
-            </ScatterChart>
-        </ResponsiveContainer>
+        <div>
+            <h4 className='chart-title'>Event Location Frequency</h4>
+            <ResponsiveContainer width='99%' height={400}>
+                <ScatterChart
+                    margin={{
+                    top: 20,
+                    right: 20,
+                    bottom: 60,
+                    left: -30,
+                    }}
+                >
+                    <CartesianGrid />
+                    <XAxis 
+                        type='category' dataKey='city' name='City'
+                        angle={60} interval={0} tick={{ dx: 20, dy: 40, fontSize: 14 }}
+                    />
+                    <YAxis
+                        type='number' dataKey='count'
+                        name='Number of Events' allowDecimals={false}
+                    />
+                    <Tooltip cursor={{ strokeDasharray: '3 3' }} />
+                    <Scatter name='Events' data={data} fill='#40748c' />
+                </ScatterChart>
+            </ResponsiveContainer>
+        </div>
     );
 }
 

@@ -8,6 +8,7 @@
   --main-font-size: 16px;
   --font-bold: 700;
 }
+/* primary and secondary color values included in both chart fills */
 
 .App {
   text-align: center;
@@ -89,6 +90,7 @@ input[type="number"] {
 .textbox-and-title {
   display: inline-block;
   margin: 10px 20px 0 20px;
+  grid-template-columns: 1fr 1fr;
 }
 
 .search-box {
@@ -171,6 +173,19 @@ input[type="number"] {
   color: var(--secondary-color);
 }
 
+.chart-title {
+  color: var(--secondary-color);
+  padding-bottom: 0;
+}
+
+.charts-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  border: 3px solid var(--darker-grey);
+  border-radius: 7px;
+  margin: 10px 0 10px 0;
+}
+
 @media all and (min-width: 300px) and (max-width: 750px) {
   #heading {
     padding-right: 20px;
@@ -194,4 +209,10 @@ input[type="number"] {
     margin: 10px 20px 0 20px;
   }
 
+}
+
+@media (max-width: 768px) {
+  .charts-container {
+    grid-template-columns: 1fr;
+  }
 }

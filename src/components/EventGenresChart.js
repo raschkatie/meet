@@ -46,19 +46,22 @@ const EventGenresChart = ({ events }) => {
       };
 
     return (
-          <ResponsiveContainer width='99%' height={400}>
+        <div>
+            <h4 className='chart-title'>Topic Popularity</h4>
+            <ResponsiveContainer width='99%' height={350}>
             <PieChart>
-              <Pie
+                <Pie
                 dataKey='value'
                 data={data}
                 fill='#40748c'
                 label={renderCustomizedLabel}
                 labelLine={false}
-                outerRadius={130}
+                outerRadius={150}
             />
             </PieChart>
-          </ResponsiveContainer>
-      );
+            </ResponsiveContainer>
+        </div>
+    );
 }
 
 export default EventGenresChart;
