@@ -1,12 +1,13 @@
 import EventList from './components/EventList';
 import CitySearch from './components/CitySearch';
 import NumberOfEvents from './components/NumberOfEvents';
+import CityEventsChart from './components/CityEventsChart';
+import EventGenresChart from './components/EventGenresChart';
 import { extractLocations, getEvents } from './api';
 import { useState, useEffect } from 'react';
 import { InfoAlert, ErrorAlert, WarningAlert } from './components/Alert';
 import React from 'react';
 import './App.css';
-import CityEventsChart from './components/CityEventsChart';
 
 const App = () => {
   const [events, setEvents] = useState([]);
@@ -51,8 +52,10 @@ const App = () => {
       <div id='heading'>
         <h1>Meet App</h1>
         <p id='heading-details'>
-          Here, you can find events all around the globe. <br />
-          If you'd like to find events near you or edit the number of events displayed, use the search bars below. <br />
+          Here, you can find events all around the globe. </p>
+        <p id='heading-details'>
+          If you'd like to find events near you or edit the number of events displayed, use the search bars below.</p>
+        <p id='heading-details'>
           Happy planning!
         </p>
       </div>
@@ -69,6 +72,7 @@ const App = () => {
       <div className='loading-container'>
         {isLoading ? <h3 className='loading-screen'>Loading...</h3> : null}
         <div className='charts-container'>
+          <EventGenresChart events={events} />
           <CityEventsChart allLocations={allLocations} events={events} />
         </div>
         <EventList events={events} />
